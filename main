@@ -1,0 +1,27 @@
+import rooms
+#Imports other Script
+import artwork
+#Imports other Script   
+
+# Defines the start function
+def start():
+# Calls dungeon artwork from artwork script
+    artwork.artdungeon()
+    print ("You see a dungeon entrance infront of you")
+    print ("What do you do?")
+    print ("\n1. Enter the dungeon")
+    print ("\n2. Turn around")
+    
+    answer = input("> ")
+    
+    if answer == "1":
+# Executes fuctions from rooms script that picks randomly from a list
+        rooms.execute_randoms()
+    elif answer == "2":
+# Executes game_over from rooms script
+        rooms.game_over("WOw?!")
+    else:
+        rooms.game_over("You dont know how to listen to instructions")
+        
+        # Runs start function
+start()
