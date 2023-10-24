@@ -1,0 +1,212 @@
+import random
+import artwork
+import time
+# importing all the scripts/modules we will be using
+
+def execute_randomt():
+    rooms = [treasure_room1, treasure_room2, treasure_room3]
+    random.choice(rooms)()
+
+def execute_randomb():
+    rooms = [boss1, boss2, boss3]
+    random.choice(rooms)()
+
+def execute_randoms():
+    rooms = [room1, empty_room]
+    random.choice(rooms)()
+    
+def execute_randomr():
+    rooms = [treasure_room1, empty_room]
+    random.choice(rooms)()
+
+def treasure_room1():
+    artwork.arttreasureroom1()
+    print("\nYou enter the treasure room")
+    print("\nAll around you, you see gold")
+    print("\nYou see a hatch in the ground")
+    print("What do you do?")
+    print("\n1). Start grabbing the treasure")
+    print("\n2). Run towards the hatch")
+    
+    answer = input("\n> ")
+    
+    if answer == "1":
+        game_over("The dungeon collasped around you")
+    elif answer == "2":
+        print("\nYou hear the room start to cumble around you as you escape through the hatch")
+        play_again()
+    else:
+        game_over("Learn to follow instructions")
+        
+def treasure_room2():
+    artwork.arttreasureroom2()
+    print("\nYou enter the treasure room")
+    print("\nAll around you, you see gold")
+    print("\nYou see a hatch in the ground")
+    print("What do you do?")
+    print("\n1). Start grabbing the treasure")
+    print("\n2). Run towards the hatch")
+    
+    answer = input("\n> ")
+    
+    if answer == "1":
+        game_over("The dungeon collasped around you")
+    elif answer == "2":
+        print("\nYou hear the room start to cumble around you as you escape through the hatch")
+        play_again()
+    else:
+        game_over("Learn to follow instructions")
+        
+def treasure_room3():
+    artwork.arttreasureroom2()
+    print("\nYou enter the treasure room")
+    print("\nAll around you, you see gold")
+    print("\nYou see a hatch in the ground")
+    print("What do you do?")
+    print("\n1). Start grabbing the treasure")
+    print("\n2). Run towards the hatch")
+    
+    answer = input("\n> ")
+    
+    if answer == "1":
+        game_over("The dungeon collasped around you")
+    elif answer == "2":
+        print("\nYou hear the room start to cumble around you as you escape through the hatch")
+        play_again()
+    else:
+        game_over("Learn to follow instructions")
+        
+        
+def empty_room():
+    artwork.artempty_room()
+    print("\nYou enter an empty room")
+    print("\nYou hear a slight rumble in the distance")
+    print("\nWhat do you do?")
+    print("\n1). Go left")
+    print("\n2). Go right")
+    
+    answer = input("\n> ")
+    
+    if answer == "1":
+        execute_randomt()
+    elif answer == "2":
+        execute_randomb()
+    else:
+        game_over("Learn to follow instructions")
+
+def room1():
+    artwork.artroom1()
+    print("\nYou enter a room")
+    print("\nYou see a flaming sword on a table")
+    print("\nWhat do you do?")
+    print("\n1). Pick up the sword")
+    print("\n2). Leave the room")
+    
+    answer = input("\n> ")
+    
+    if answer == "1":
+        boss1()
+    elif answer == "2":
+        execute_randomb()
+    else:
+        game_over("Learn to follow instructions")
+
+def boss1():
+    artwork.artboss1()
+    print("\nYou stumble upon a boss")
+    print("\nHe seems to be weak")
+    print("\nWhat do you do?")
+    print("\n1). Attack with the sword")
+    print("\n2). Flee through a room")
+    
+    answer = input("\n> ")
+    
+    if answer == "1":
+        print("\nYou fly through the sky and attack the Skelly with brute force killing him")
+        print("\nWhat do you do now?")
+        print("\n1). Continue into the dungeon")
+        print("\n2). Flee from being scared")
+        
+        answer = input("\n> ")
+        if answer == "1":
+            execute_randomt()
+        elif answer == "2":
+            game_over("Scardy cat")
+            
+    elif answer == "2":
+        
+        execute_randomr()
+        
+    else:
+        game_over("Learn to follow instructions")
+
+def boss2():
+    artwork.artboss2()
+    print("\nYou stumble upon a boss")
+    print("\nHe seems to be weak")
+    print("\nWhat do you do?")
+    print("\n1). Attack with the sword")
+    print("\n2). Flee through a room")
+    
+    answer = input("\n> ")
+    
+    if answer == "1":
+        print("\nYou fly through the sky and attack the Skelly with brute force killing him")
+        print("\nWhat do you do now?")
+        print("\n1). Continue into the dungeon")
+        print("\n2). Flee from being scared")
+        
+        answer = input("\n> ")
+        if answer == "1":
+            execute_randomt()
+        elif answer == "2":
+            game_over("Scardy cat")
+            
+    elif answer == "2":
+        
+        execute_randomr()
+        
+    else:
+        game_over("Learn to follow instructions")
+        
+def boss3():
+    artwork.artboss3()
+    print("\nYou stumble upon a boss")
+    print("\nHe seems to be weak")
+    print("\nWhat do you do?")
+    print("\n1). Attack with the sword")
+    print("\n2). Flee through a room")
+    
+    answer = input("\n> ")
+    
+    if answer == "1":
+        print("\nYou slide under him jumping up and stabing him in the back and killing him")
+        game_win()
+        
+    elif answer == "2":
+        print("\nCant run from this boss")
+        time.sleep(1)
+        print("\nHe attacks you striking you down with one blow")
+        game_over("You cant run from the final boss")
+        
+    else:
+        game_over("Learn to follow instructions")
+
+def game_over(reason):
+    artwork.artgame_over
+    print("\n" + reason)
+    time.sleep(2)
+    play_again()
+
+def play_again():
+    print("\nDo you want to play again? (y or n)")
+    answer = input(">").lower()
+
+    if "y" in answer:
+        print("Ok")
+    else:
+        exit()
+
+def game_win():
+    time.sleep(1)
+    play_again()
